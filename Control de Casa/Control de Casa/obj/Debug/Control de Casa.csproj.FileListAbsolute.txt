@@ -1,0 +1,9 @@
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\bin\Debug\Control de Casa.exe.config
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\bin\Debug\Control de Casa.exe
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\bin\Debug\Control de Casa.pdb
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Debug\Control de Casa.csprojResolveAssemblyReference.cache
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.Form1.resources
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.Properties.Resources.resources
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Debug\Control de Casa.csproj.GenerateResource.Cache
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Debug\Control de Casa.exe
+C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Debug\Control de Casa.pdb
