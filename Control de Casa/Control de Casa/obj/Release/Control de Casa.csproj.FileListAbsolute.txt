@@ -6,3 +6,12 @@ C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Release\Contr
 C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Release\Control de Casa.csproj.GenerateResource.Cache
 C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Release\Control de Casa.exe
 C:\Users\GerardoMisael\Desktop\Control de Casa\Control de Casa\obj\Release\Control de Casa.pdb
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Release\Control de Casa.exe.config
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Release\Control de Casa.exe
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Release\Control de Casa.pdb
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Release\Control de Casa.csprojResolveAssemblyReference.cache
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Release\Control_de_Casa.Form1.resources
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Release\Control_de_Casa.Properties.Resources.resources
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Release\Control de Casa.csproj.GenerateResource.Cache
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Release\Control de Casa.exe
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Release\Control de Casa.pdb

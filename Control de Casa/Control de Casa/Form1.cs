@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Control_de_Casa
 {
     public partial class Form1 : Form
     {
+        MySqlCommand sql = null;
+
+        MySqlDataReader consulta;
         public Form1()
         {
             InitializeComponent();
             puertosDisponibles();
+
+            sql = new MySqlCommand();
+
+
+
         }
 
         private void puertosDisponibles()
@@ -31,36 +41,63 @@ namespace Control_de_Casa
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             if (cbo_puertos.SelectedItem != null)
             {
-                if (button1.Text == "Prender")
+                if (button1.Text == "Iniciar")
                 {
+                  
+                    button1.Text = "Parar";
+                    MessageBox.Show("Iniciado");
+                  
                     serialPort1.PortName = cbo_puertos.SelectedItem.ToString();
                     serialPort1.BaudRate = 9600;
-                    serialPort1.Open();
+                    try
+                    {
+                        serialPort1.Open();
 
-                    serialPort1.Write("1");
-                    serialPort1.Close();
+                    }catch(Exception ex) { MessageBox.Show(ex.ToString()); }
 
-                    button1.Text = "Apagar";
+
 
                 }
                 else
                 {
-                    serialPort1.PortName = cbo_puertos.SelectedItem.ToString();
-                    serialPort1.BaudRate = 9600;
-                    serialPort1.Open();
 
-                    serialPort1.Write("a");
                     serialPort1.Close();
-
-                    button1.Text = "Prender";
+                    button1.Text = "Iniciar";
+                    MessageBox.Show("Parado");
                 }
+
             }
             else
             {
-                MessageBox.Show("Seleccione un puerto de destino", "Se te olvido el puerto");
+                MessageBox.Show("Seleccione un puerto de destino", "Se le olvido el puerto");
             }
+            
+
+
+
+
+        }
+
+        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+         
+            string indata = serialPort1.ReadLine();
+ 
+            sql.CommandText = "call sp_pasarlista('"+indata+"');";
+            sql.Connection = bd.ObtenerConexion();
+            consulta = sql.ExecuteReader();
+
+            while (consulta.Read())
+            {
+                serialPort1.Write(consulta.GetString(0));
+            }
+
+            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
