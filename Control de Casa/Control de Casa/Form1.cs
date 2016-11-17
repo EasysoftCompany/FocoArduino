@@ -15,13 +15,14 @@ namespace Control_de_Casa
     public partial class Form1 : Form
     {
         MySqlCommand sql = null;
-
         MySqlDataReader consulta;
+
+
         public Form1()
         {
             InitializeComponent();
             puertosDisponibles();
-
+         
             sql = new MySqlCommand();
 
 
@@ -84,30 +85,53 @@ namespace Control_de_Casa
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
-         
             string indata = serialPort1.ReadLine();
- 
             sql.CommandText = "call sp_pasarlista('"+indata+"');";
             sql.Connection = bd.ObtenerConexion();
             consulta = sql.ExecuteReader();
 
             while (consulta.Read())
             {
-                serialPort1.Write(consulta.GetString(0));
-            }
+                
+               MessageBox.Show(consulta.GetString(0));
+                
+             }
 
-            
 
         }
 
+
+
         private void label1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seleccione de los Puertos disponibles el que sea propio del microcontrolador ARDUINO", "Ayuda");
+            MessageBox.Show("Seleccione de los Puertos disponibles, el que sea propio del microcontrolador ARDUINO", "Ayuda");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             puertosDisponibles();
+        }
+
+        private void cbo_puertos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           if(serialPort1.IsOpen)
+            {
+                serialPort1.Close();
+            }
+
+            registro_ok ok = new registro_ok();
+            this.Hide();
+                ok.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

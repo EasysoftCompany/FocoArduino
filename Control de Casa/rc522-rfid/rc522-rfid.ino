@@ -1,4 +1,15 @@
-
+/*
+  -----------------------------------------------------------------------------------------
+              MFRC522      Arduino       Arduino   Arduino    Arduino          Arduino
+              Reader/PCD   Uno/101       Mega      Nano v3    Leonardo/Micro   Pro Micro
+  Signal      Pin          Pin           Pin       Pin        Pin              Pin
+  -----------------------------------------------------------------------------------------
+  RST/Reset   RST          9             5         D9         RESET/ICSP-5     RST
+  SPI SS      SDA(SS)      10            53        D10        10               10
+  SPI MOSI    MOSI         11 / ICSP-4   51        D11        ICSP-4           16
+  SPI MISO    MISO         12 / ICSP-1   50        D12        ICSP-1           14
+  SPI SCK     SCK          13 / ICSP-3   52        D13        ICSP-3           15
+*/
 
 // Librerías necesarias
 #include <SPI.h>
@@ -7,10 +18,9 @@
 #define SS_PIN 53 // pin SDA hacia el pin 10
 #define RST_PIN 5 // pin RST hacia el pin 9
 
-int led = 10;
-int rosa = 12;
-int buzzer = 11;
-char orden = '1';
+int led1 = 10;
+int led2 = 11;
+int buzzer = 12;
 MFRC522 rfid(SS_PIN, RST_PIN); // Creo la instancia de la clase MFRC522
 
 
@@ -19,12 +29,11 @@ byte nuidPICC[4];
 
 void setup() {
   pinMode(buzzer, OUTPUT);
-  pinMode(led, OUTPUT);
-  pinMode(rosa, OUTPUT);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
   Serial.begin(9600);
   SPI.begin(); // Inicia el bus de SPI
   rfid.PCD_Init(); // Inicia el lector
-
 
 }
 
@@ -43,18 +52,11 @@ void loop() {
     nuidPICC[i] = rfid.uid.uidByte[i];
   }
   printHex(rfid.uid.uidByte, rfid.uid.size);
+  detectado();
 
 
-  orden = Serial.read();
-  if(orden == '1'){
-  aprobado();
-  
-  }else{
 
-  noaprobado();
-    
-  }
-  
+
 
   // Halt PICC
   rfid.PICC_HaltA();
@@ -68,42 +70,26 @@ void loop() {
    Función que ayuda a representar valores hex en el monitor serial
 */
 void printHex(byte *buffer, byte bufferSize) {
+
   for (byte i = 0; i < bufferSize; i++) {
     Serial.print(buffer[i] < 0x10 ? " 0" : " ");
-    Serial.print(buffer[i], HEX);   
-  }Serial.println();
+    Serial.print(buffer[i] , HEX);
+  } Serial.println();
+
 }
 
-/**
-   Función que ayuda a representar valores en dec en el monitor serial
-*/
-void printDec(byte *buffer, byte bufferSize) {
-  for (byte i = 0; i < bufferSize; i++) {
-    
-    Serial.println(buffer[i], DEC);
-  }
-}
-void aprobado() {
-  digitalWrite(led, HIGH);
+
+void detectado() {
+  digitalWrite(led1, HIGH);
+  digitalWrite(led2, HIGH);
   analogWrite(buzzer, 120); //emite sonido
   delay(100);
   analogWrite(buzzer, 160); //emite sonido
   delay(200);
   digitalWrite(buzzer, LOW); //deja de emitir
-  digitalWrite(led, LOW);
-  delay(200);
+  digitalWrite(led1,LOW );
+  digitalWrite(led2, LOW);
 
 }
 
-void noaprobado() {
-  digitalWrite(rosa, HIGH);
-  analogWrite(buzzer, 160); //emite sonido
-  delay(100);
-  analogWrite(buzzer, 120); //emite sonido
-  delay(200);
-  digitalWrite(buzzer, LOW); //deja de emitir
-  digitalWrite(rosa, LOW);
-  delay(200);
-
-}
 

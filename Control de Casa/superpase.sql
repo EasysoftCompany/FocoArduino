@@ -6,8 +6,17 @@ create table asistencia(user_rfid varchar(12),fecha timestamp);
 delimiter $$
 create procedure sp_registrar(user_rfid_in nvarchar(12),name_in nvarchar(100),ap_in nvarchar(100),am_in nvarchar(100),boleta_in nvarchar(10))
 begin
+declare existe int(2);
+
+set existe = (select count(*) from login where user_rfid = user_rfid_in);
+
+if existe = 0 then
+
 INSERT INTO login VALUES(user_rfid_in,name_in,ap_in,am_in,boleta_in);
 select concat('Registrado con exito el usuario con RFID: ',user_rfid_in) as result;
+else
+select 'Usuario ya Registrado' as result;
+end if;
 end$$
 delimiter ;
 
@@ -20,9 +29,9 @@ set existe = (select count(*) from login where user_rfid = user_rfid_in);
 
 if existe = 1 then
 INSERT INTO asistencia VALUES(user_rfid_in,now());
-select '1' as result;
+select concat('Bienvenido(a) ',user_name,' ',user_ap,' ',user_am) from login where user_rfid = user_rfid_in;
 else
-select '0' as result;
+select 'Alumno no registrado' as result;
 end if ;
 end$$
 delimiter ;

@@ -1,0 +1,13 @@
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Debug\superpase.exe.config
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\superpase.exe
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\superpase.pdb
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Debug\superpase.exe
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Debug\superpase.pdb
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Debug\MySql.Data.dll
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Debug\MySql.Data.xml
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Superpase.csprojResolveAssemblyReference.cache
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.Form1.resources
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Superpase.csproj.GenerateResource.Cache
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.Properties.Resources.resources
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.registro.resources
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.registro_ok.resources
