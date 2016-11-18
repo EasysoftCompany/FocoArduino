@@ -36,6 +36,15 @@ end if ;
 end$$
 delimiter ;
 
+
+delimiter $$
+create procedure sp_get_lista()
+begin
+select concat(login.user_name,' ',login.user_ap,' ',login.user_am),login.user_boleta ,asistencia.fecha from login INNER JOIN asistencia ON asistencia.user_rfid = login.user_rfid;
+end$$
+delimiter ;
+
+
 call sp_registrar(" F7 FB 08 3B","Gerardo Misael","Rico","Carlos","2016601438");
 call sp_pasarlista(" F7 FB 08 3B");
 

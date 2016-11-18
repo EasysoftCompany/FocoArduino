@@ -11,3 +11,5 @@ C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debu
 C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.Properties.Resources.resources
 C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.registro.resources
 C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.registro_ok.resources
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\obj\Debug\Control_de_Casa.pdf.resources
+C:\Users\g_ric\Source\Repos\FocoArduino\Control de Casa\Control de Casa\bin\Debug\itextsharp.dll

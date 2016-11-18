@@ -133,5 +133,17 @@ namespace Control_de_Casa
         {
             Application.Exit();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Close();
+            }
+            pdf pdf = new pdf();
+            this.Hide();
+            pdf.Show();
+            
+        }
     }
 }
